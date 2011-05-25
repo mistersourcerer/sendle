@@ -1,1 +1,8 @@
 A file system watcher to send new files to your kindle
+
+~/.sendle
+gmail:
+  username: john_do@gmail.com
+  password: aSuperSecurePass
+kindle:
+  email: john_do@kindle.com
