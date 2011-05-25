@@ -1,8 +1,4 @@
 source :rubygems
 
-gem 'rb-fsevent'
-gem 'gmail'
+gemspec
 
-group :development do
-  gem 'jeweler'
-end
