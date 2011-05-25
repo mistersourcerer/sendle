@@ -51,10 +51,8 @@ class Sendle
   end
 
   def file_modified?(path)
-    puts "::::: #{path}"
     # Depending on the filesystem, mtime is probably only precise to the second, so round
     # both values down to the second for the comparison.
-    puts "::::: #{File.mtime(path).to_i} >= #{last_event.to_i}"
     File.mtime(path).to_i >= last_event.to_i
   rescue
     false
