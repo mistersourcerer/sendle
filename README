@@ -1,8 +1,9 @@
 A file system watcher to send new files to your kindle
 
+ruby 1.9.2
+
 ~/.sendle
 gmail:
   username: john_do@gmail.com
-  password: aSuperSecurePass
 kindle:
   email: john_do@kindle.com

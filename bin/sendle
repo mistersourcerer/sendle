@@ -4,4 +4,12 @@ $:.unshift(File.dirname(__FILE__) + '/../lib')
 require 'rb-fsevent'
 require 'sendle'
 
-sendle = Sendle.new
+password = nil
+while(password.nil? || password.empty?)
+  puts 'Please, type your gmail password'
+  system 'stty -echo'
+  password = gets.strip
+  system 'stty echo'
+end
+puts 'starting...'
+sendle = Sendle.new(password)

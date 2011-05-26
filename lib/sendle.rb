@@ -5,7 +5,8 @@ require 'gmail'
 class Sendle
   attr_reader :last_event, :sha1_checksums_hash, :listener
 
-  def initialize    
+  def initialize(password)
+    @password = password
     @sha1_checksums_hash = {}
     @last_event = Time.now
 
@@ -13,8 +14,8 @@ class Sendle
   end
 
   def send_to_kindle(file)
-    @config ||= YAML::load(File.open("#{ENV['HOME']}/.sendler"))
-    gmail       = Gmail.connect(@config["gmail"]["username"], @config["gmail"]["password"])
+    @config ||= YAML::load(File.open("#{ENV['HOME']}/.sendle"))
+    gmail       = Gmail.connect(@config["gmail"]["username"], @password)
     message     = gmail.message
     message.to  = @config["kindle"]["email"]
     message.add_file file
